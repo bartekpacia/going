@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func bubbleSort(arr []int) []int {
+func insertionSort(arr []int) []int {
 	n := len(arr)
 	for i := 0; i < n-1; i++ {
 		for j := 0; j < n-i-1; j++ {
@@ -18,7 +18,7 @@ func bubbleSort(arr []int) []int {
 func main() {
 	nums := []int{7, 9, 8, 3, 2, 1, 6, 4, 5}
 
-	bubbleSort(nums)
-
-	fmt.Println(nums)
+	fmt.Printf("before: %v\n", nums)
+	insertionSort(nums)
+	fmt.Printf("after : %v\n", nums)
 }

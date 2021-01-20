@@ -18,7 +18,7 @@ func selectionSort(arr []int) []int {
 func main() {
 	nums := []int{7, 9, 8, 3, 2, 1, 6, 4, 5}
 
+	fmt.Printf("before: %v\n", nums)
 	selectionSort(nums)
-
-	fmt.Println(nums)
+	fmt.Printf("after : %v\n", nums)
 }
