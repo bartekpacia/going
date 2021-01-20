@@ -4,12 +4,6 @@ import (
 	"fmt"
 )
 
-func swap(a *int, b *int) {
-	tmp := a
-	*a = *b
-	*b = *tmp
-}
-
 func bubbleSort(arr []int) []int {
 	n := len(arr)
 	for i := 0; i < n-1; i++ {
