@@ -10,7 +10,7 @@ func main() {
 	fmt.Println("Ciekawe co tam słychać w Polsce...")
 
 	time.Sleep(10 * time.Second)
-	println("Prawidłowo!")
+	fmt.Println("Prawidłowo!")
 }
 
 func publish(news string, delay time.Duration) {
