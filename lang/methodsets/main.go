@@ -1,8 +1,10 @@
 package main
 
+import "fmt"
+
 type Worker interface {
 	DoWork(data []byte) (int, error)
-	Identify() string
+	String() string
 }
 
 type Human struct {
@@ -14,8 +16,8 @@ func (m Human) DoWork(data []byte) (int, error) {
 	return 7, nil
 }
 
-func (m Human) Identify() string {
-	return m.FirstName + m.LastName
+func (h Human) String() string {
+	return h.FirstName + " " + h.LastName
 }
 
 type Machine struct {
@@ -26,7 +28,7 @@ func (m Machine) DoWork(data []byte) (int, error) {
 	return 7, nil
 }
 
-func (m Machine) Identify() string {
+func (m Machine) String() string {
 	return m.ID
 }
 
@@ -34,10 +36,12 @@ func main() {
 	var humanWorker Worker
 	humanWorker = Human{FirstName: "John", LastName: "Doe"}
 	humanWorker.DoWork([]byte{2, 4, 8})
-	humanWorker.Identify()
 
 	var machineWorker Worker
 	machineWorker = Machine{ID: "25"}
 	machineWorker.DoWork([]byte{2, 4, 8})
-	machineWorker.Identify()
+
+	var stringer1 fmt.Stringer = humanWorker
+	var stringer2 fmt.Stringer = machineWorker
+	fmt.Println(stringer1, stringer2)
 }
